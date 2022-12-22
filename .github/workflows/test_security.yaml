@@ -5,6 +5,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+
+    - name: Build
+      run: cd test-stdout-program && go build
+
+    - name: Run test STDOUT/STDERR program
+      run: ./main
+
     - uses: kubescape/github-action@main
       with:
         format: "pretty-printer"
