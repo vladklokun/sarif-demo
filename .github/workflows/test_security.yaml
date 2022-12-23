@@ -20,7 +20,7 @@ jobs:
     - uses: kubescape/github-action@main
       with:
         format: "pretty-printer"
-        # outputFile: results.sarif
+        # outputFile: "results"
         frameworks: "nsa"
         severityThreshold: "critical"
         # # Optional - Add Kubescape cloud account ID.
